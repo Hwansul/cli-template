@@ -1,6 +1,13 @@
 # 목차
 
 - [목차](#목차)
+- [명령어 만들기](#명령어-만들기)
+  - [Cobra 설치하기](#cobra-설치하기)
+  - [CLI 프로그램 초기화하기](#cli-프로그램-초기화하기)
+    - [모듈 초기화하기](#모듈-초기화하기)
+    - [Cobra CLI 어플리케이션 초기화하기](#cobra-cli-어플리케이션-초기화하기)
+    - [명령어 추가하기](#명령어-추가하기)
+    - [플래그 추가하기](#플래그-추가하기)
 - [Golang과 친해지기](#golang과-친해지기)
   - [의존성을 설치하는 방법](#의존성을-설치하는-방법)
     - [1. go 모듈 초기화하기](#1-go-모듈-초기화하기)
@@ -12,6 +19,50 @@
 - [저장소 설정하기](#저장소-설정하기)
   - [포함된 모듈 목록](#포함된-모듈-목록)
   - [자동화](#자동화)
+
+# 명령어 만들기
+
+## Cobra 설치하기
+
+go가 설치되어 있다면, go의 cli 프로그램 생성 도구인 [cobra](https://github.com/spf13/cobra#installing)를 설치 해 주세요.
+
+```shell
+go install github.com/spf13/cobra-cli@latest
+```
+
+## CLI 프로그램 초기화하기
+
+### 모듈 초기화하기
+
+> 이미 모듈이 있다면 이 과정은 생략 해 주세요.
+
+1. 디렉토리 만들기
+2. 만든 디렉토리로 `cd` 해주기
+3. `go mod init <MODNAME>`으로 모듈 생성하기
+
+### Cobra CLI 어플리케이션 초기화하기
+
+```shell
+cobra-cli init
+```
+
+### 명령어 추가하기
+
+> `cobra-cli add command-name` 으로 명령어를 추가해요.
+> `cobra-cli add child-command-name -p 'parent-command-nameCmd'` 으로 child 명령어를 만들 수 있어요.
+
+### 플래그 추가하기
+
+- [Persistent Flag](https://github.com/spf13/cobra/blob/main/user_guide.md#persistent-flags)와 [Local Flag](https://github.com/spf13/cobra/blob/main/user_guide.md#local-flags)도 추가 할 수 있어요.
+
+```go
+// Persistent 플래그는 명령어 자신 뿐만 아니라 하위 명령어에도 적용되는 플래그를 말해요.
+// 글로벌 플래그를 만들고 싶다면, 루트 명령어에 Persistent 플래그를 적용 해 주면 된답니다.
+rootCmd.PersistentFlags().BoolVarP(&Verbose, "verbose", "v", false, "verbose output")
+
+// 원하는 명령어에만 적용 할 수 있는 플래그도 지정 가능합니다!
+localCmd.Flags().StringVarP(&Source, "source", "s", "", "Source directory to read from")
+```
 
 # Golang과 친해지기
 
@@ -78,6 +129,7 @@ func main () {
 
 | 파일                             | 용도                                                                                                                                                                                                                     |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `.cobra.yaml`                    | 여기에 제작자와 라이선스를 입력 해 두면 매번 제작자와 라이선스를 수정하지 않아도 됩니다!                                                                                                                                 |
 | `.pre-commit-config.yaml`        | [pre-commit](https://pre-commit.com/) 설정 파일.<br/> `pre-commit install`로 git hook을 설치 할 수 있고, `pre-commit sample-config`로 이 파일을 생성 할 수 있습니다.                                                     |
-| `.gorelaser.ymal`                | [GoReleaser](https://goreleaser.com/) 설정 파일. `goreleaser init` 명령어로 생성합니다. <br>컴파일, 릴리즈 노트 생성, Homebrew Formulae를 생성하고 나의 Homebrew Tap 저장소에 배포하는 작업을 자동화 하는 데 사용됩니다. |
+| `.gorelaser.yaml`                | [GoReleaser](https://goreleaser.com/) 설정 파일. `goreleaser init` 명령어로 생성합니다. <br>컴파일, 릴리즈 노트 생성, Homebrew Formulae를 생성하고 나의 Homebrew Tap 저장소에 배포하는 작업을 자동화 하는 데 사용됩니다. |
 | `.github/workflows/release.yml`. | Github Action을 이용해 [GoReleaser의 작업을 자동화](https://goreleaser.com/ci/actions/?h=github+ac) 하기 위한 설정 파일.                                                                                                 |
