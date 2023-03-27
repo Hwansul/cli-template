@@ -12,11 +12,11 @@ builds:
       - linux
       - windows
       - darwin
-    binary:
-      # Binary name.
-      # Can be a path (e.g. `bin/app`) to wrap the binary in a directory.
-      # Default is the name of the project directory.
-      name_of_binary
+    # binary:
+    # Binary name.
+    # Can be a path (e.g. `bin/app`) to wrap the binary in a directory.
+    # Default is the name of the project directory.
+    # name_of_binary
 
 # https://goreleaser.com/customization/release/?h=prerelease#github
 release:
