@@ -19,6 +19,7 @@
 - [저장소 설정하기](#저장소-설정하기)
   - [포함된 모듈 목록](#포함된-모듈-목록)
   - [자동화](#자동화)
+- [복사 후 할 일](#복사-후-할-일)
 
 # 명령어 만들기
 
@@ -133,3 +134,8 @@ func main () {
 | `.pre-commit-config.yaml`        | [pre-commit](https://pre-commit.com/) 설정 파일.<br/> `pre-commit install`로 git hook을 설치 할 수 있고, `pre-commit sample-config`로 이 파일을 생성 할 수 있습니다.                                                                                                                                                                                                  |
 | `.gorelaser.yaml`                | [GoReleaser](https://goreleaser.com/) 설정 파일. `goreleaser init` 명령어로 생성합니다. <br>컴파일, 릴리즈 노트 생성, Homebrew Formulae를 생성하고 나의 Homebrew Tap 저장소에 배포하는 작업을 자동화 하는 데 사용됩니다.                                                                                                                                              |
 | `.github/workflows/release.yml`. | Github Action을 이용해 [GoReleaser의 작업을 자동화](https://goreleaser.com/ci/actions/?h=github+ac) 하기 위한 설정 파일. <br/> `Homebrew-tapName`으로 [자신](https://github.com/mindulle/homebrew-mindulle)의 [brew tap](https://docs.brew.sh/Taps)을 만들어 두었다면, 이 템플릿에서 만든 명령어를 자신의 tap에 자동 배포해주는 Github Action을 위한 설정 파일이에요. |
+
+# 복사 후 할 일
+
+- `.goreleaser.yaml`의 `brews.name` value 수정하기
+- `cmd/root.go`의 `rootCmd.use` value 수정하기.
