@@ -1,5 +1,5 @@
 preset: angular
-repositoryUrl: https://github.com/mindulle/dev.git
+repositoryUrl: https://github.com/mindulle/cli-template-for-human.git
 branches:
   - main
 
