@@ -13,7 +13,8 @@
    1. 여기서 자신의 homebrew tap이 존재하지 않으면 하나 만드실 수 있어요.
    2. 깃허브 저장소에 `homebrew-username` [형식](https://docs.brew.sh/Taps#repository-naming-conventions-and-assumptions)으로 저장소를 만들고 [예시](https://github.com/mindulle/homebrew-mindulle)처럼 설정 해 주세요.
    3. 해당 예시의 README.md 파일을 제외한 모든 파일은 이 저장소의 goreleaser가 자동으로 생성했어요.
-6. 이 모든 과정에서 설정이 부족하거나 수정이 필요하다고 생각되시면 자유롭게 수정 해 주세요!
+6. `.releaserc.yaml`의 repositoryURL 필드의 값을 생성한 저장소의 git 주소로 변경 해 주세요.
+7. 이 모든 과정에서 설정이 부족하거나 수정이 필요하다고 생각되시면 자유롭게 수정 해 주세요!
 
 # 설정하기
 
