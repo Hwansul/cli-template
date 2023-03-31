@@ -6,7 +6,7 @@
    1. `release.yaml`에서 PUBLISHER_TOKEN으로 지정되어 있는 토큰을 만드는 작업이에요.
    2. 기본 세팅과 같은 이름인 PUBLISHER_TOKEN으로 새 토큰을 만드시거나
    3. 혹은 원하시는 다른 이름으로 토큰을 만든 뒤, `release.yaml`을 그 이름으로 수정 해 주세요.
-2. `semantic release`의 [이 이슈](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#configuring-the-default-github_token-permissions)를 예방하기 위해 저장소의 settings - 좌측 사이드바의 Actions - General 로 이동 후 페이지 하단의 Workflow permissions의 Read and write permissions 라디오 버튼을 클릭 해 주세요.
+2. `semantic release`의 [이 이슈](https://github.com/semantic-release/semantic-release/issues/2481#issuecomment-1421429306)를 예방하기 위해 저장소의 settings - 좌측 사이드바의 Actions - General 로 이동 후 페이지 하단의 Workflow permissions의 Read and write permissions 라디오 버튼을 클릭 해 주세요.
 3. [pre-commit](#pre-commit)을 초기화 해 주세요. `pre-commit install`. 설치 되어 있지 않다면 [설치](https://pre-commit.com/#installation) 해 주세요.
 4. go 모듈을 [초기화](#모듈-초기화하기) 해 주세요. `go mod init github.com/username/repo`
 5. cobra-cli [설치](#cobra-설치하기) 후 root 명령어를 초기화 해 주세요.
