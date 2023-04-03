@@ -62,6 +62,9 @@ cobra-cli init
 cobra-cli init --viper
 ```
 
+- Viper 설정파일의 기본 디렉터리는 `$HOME/.projectName.yaml` 입니다.
+- 명령어를 많이 만들 예정이라면 $HOME 디렉터리가 지저분 해 질 수 있으니, `root.go`의 `initConfig()`함수 내용을 적절히 변경 해 줍시다.
+
 ### 명령어 추가하기
 
 > `cobra-cli add command-name` 으로 명령어를 추가해요.
