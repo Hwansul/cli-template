@@ -56,6 +56,12 @@ go install github.com/spf13/cobra-cli@latest
 cobra-cli init
 ```
 
+> 환경변수 사용이 필요하다면 [viper](https://github.com/spf13/viper#putting-values-into-viper)를 함께 사용 해 줍시다.
+
+```shell
+cobra-cli init --viper
+```
+
 ### 명령어 추가하기
 
 > `cobra-cli add command-name` 으로 명령어를 추가해요.
