@@ -29,3 +29,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
+      - name: tidy up after release
+        run: rm -rf packges.json package-lock.json
