@@ -44,9 +44,9 @@ brews:
     # GitHub/GitLab repository to push the formula to
     tap:
       # Repository owner template. (templateable)
-      owner: mindulle
+      owner: Hwansul
       # Repository name. (templateable)
-      name: homebrew-mindulle
+      name: homebrew-chakra
 
     # Git author used to commit to the repository.
     # Defaults are shown.
