@@ -18,7 +18,7 @@ jobs:
       - name: Initialize packge.json file
         run: npm init -y  
       - name: Install dependencies
-        run: npm install util dateformat fs semantic-release-gitmoji @semantic-release/git @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/changelog
+        run: npm install util dateformat@4.6.2 fs semantic-release-gitmoji @semantic-release/git @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/changelog
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
       - name: Release with tag
