@@ -1,4 +1,4 @@
-name: semantic
+name: semantic-release
 on:
   push:
     branches:
