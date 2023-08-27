@@ -35,11 +35,11 @@ universal_binaries:
 brews:
   - # Name template of the recipe
     # Default to project name
-    name: cli-template-for-human
+    name: cli-template
 
     # Your app's homepage.
     # Default is empty.
-    homepage: "https://github.com/mindulle/cli-template-for-human"
+    homepage: "https://github.com/mindulle/cli-template"
 
     # GitHub/GitLab repository to push the formula to
     tap:
