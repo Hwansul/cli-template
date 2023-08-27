@@ -14,4 +14,4 @@ jobs:
       - name: Semantic tagging
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx -p semantic-release-gitmoji -p @semantic-release/git -p @semantic-release/commit-analyzer -p @semantic-release/release-notes-generator -p @semantic-release/changelog semantic-release
+        run: npx -p util -p dateformat -p fs -p semantic-release-gitmoji -p @semantic-release/git -p @semantic-release/commit-analyzer -p @semantic-release/release-notes-generator -p @semantic-release/changelog semantic-release
