@@ -73,7 +73,7 @@ cobra-cli init --viper
 > `cobra-cli add child-command-name -p 'parent-command-nameCmd'` 으로 child 명령어를 만들 수 있어요.
 
 - 'parent-command-nameCmd'를 `camelCase`로 작성 해 주세요.
-- [cobra-cli](https://github.com/spf13/cobra-cli#add-commands-to-a-project)에서 지정된 패턴이에요.
+- [cobra-cli](https://github.com/spf13/cobra-cli#add-commands-to-a-project)에서 명시한 패턴이에요.
 
 #### 플래그 추가하기
 
@@ -125,5 +125,5 @@ go get -u -v "github.com/user/module"
 - `git push --tags` 명령으로 로컬에서 생성한 tag를 저장소에 push 할 수 있습니다.
 - 자동으로 생성된 tag와 달리 로컬에서 개발자가 생성한 tag에는 `.github/workflows/goreleaser.yaml`파일에 설정 된 Github Action이 동작해요.
 - 그 결과, 자동으로 goReleaser가 여태까지 작성한 CLI 프로그램을 나의 Homebrew tap에 배포해 준답니다!
-- 그 이후에는 tap이 [예시 저장소](https://github.com/mindulle/homebrew-mindulle)와 같은 상태가 되며 brew가 설치된 머신에서라면 만든 명령어를 바로 사용 할 수 있게 된답니다.
+- 그 이후에는 tap이 [예시 저장소](https://github.com/Hwansul/homebrew-chakra)와 같은 상태가 되며 brew가 설치된 머신에서라면 만든 명령어를 바로 사용 할 수 있게 된답니다.
 - [미리보기](#미리보기)의 6번 과정을 다시한번 잘 확인하셔서 템플릿 저장소에 대응되는 tap이 아닌 자신의 tap에 formulae가 잘 배포되게끔 다시한번 확인 해 주세요.
