@@ -2,21 +2,16 @@
 
 > 템플릿 사용 버튼을 누른 후, 차례대로 진행 해 주세요!
 
-1. 저장소의 settings - Secrets and variables - Actions에서 Repository secret을 새로 만들어 주세요.
-   1. `release.yaml`에서 PUBLISHER_TOKEN으로 지정되어 있는 토큰을 만드는 작업이에요.
-   2. 기본 세팅과 같은 이름인 PUBLISHER_TOKEN으로 새 토큰을 만드시거나
-   3. 혹은 원하시는 다른 이름으로 토큰을 만든 뒤, `release.yaml`을 그 이름으로 수정 해 주세요.
-2. `semantic release`의 [이 이슈](https://github.com/semantic-release/semantic-release/issues/2481#issuecomment-1421429306)를 예방하기 위해 저장소의 settings - 좌측 사이드바의 Actions - General 로 이동 후 페이지 하단의 Workflow permissions의 Read and write permissions 라디오 버튼을 클릭 해 주세요.
-3. [pre-commit](#pre-commit)을 초기화 해 주세요. `pre-commit install`. 설치 되어 있지 않다면 [설치](https://pre-commit.com/#installation) 해 주세요.
-4. [`gitmoji-cli`](https://github.com/carloscuesta/gitmoji-cli#install)의 [`gitmoji --init`](https://github.com/carloscuesta/gitmoji-cli#usage) 명령어를 통해 이모지를 활용한 commit hook을 설정 해 주세요.
-5. go 모듈을 [초기화](#모듈-초기화하기) 해 주세요. `go mod init github.com/username/repo`
-6. cobra-cli [설치](#cobra-설치하기) 후 root 명령어를 초기화 해 주세요.
-7. `.goreleaser.yaml` 파일의 brews 키의 값들을 알맞게 수정 해 주세요.
+1. [pre-commit](#pre-commit)을 초기화 해 주세요. `pre-commit install`. 설치 되어 있지 않다면 [설치](https://pre-commit.com/#installation) 해 주세요. immutable한 revision을 지정하고 싶다면 `pre-commit autoupdate` 명령어를 실행 해 주세요.
+2. [`gitmoji-cli`](https://github.com/carloscuesta/gitmoji-cli#install)의 [`gitmoji --init`](https://github.com/carloscuesta/gitmoji-cli#usage) 명령어를 통해 이모지를 활용한 commit hook을 설정 해 주세요.
+3. go 모듈을 [초기화](#모듈-초기화하기) 해 주세요. `go mod init github.com/username/repo`
+4. cobra-cli [설치](#cobra-설치하기) 후 root 명령어를 초기화 해 주세요.
+5. `.goreleaser.yaml` 파일의 brews 키의 값들을 알맞게 수정 해 주세요.
    1. 여기서 자신의 homebrew tap이 존재하지 않으면 하나 만드실 수 있어요.
    2. 깃허브 저장소에 `homebrew-username` [형식](https://docs.brew.sh/Taps#repository-naming-conventions-and-assumptions)으로 저장소를 만들고 [예시](https://github.com/Hwansul/homebrew-chakra)처럼 설정 해 주세요.
    3. 해당 예시의 README.md 파일을 제외한 모든 파일은 이 저장소의 goreleaser가 자동으로 생성했어요.
-8. `.releaserc.js`의 repositoryUrl 필드의 값을 생성한 저장소의 git 주소로 변경 해 주세요.
-9. 이 모든 과정에서 설정이 부족하거나 수정이 필요하다고 생각되시면 자유롭게 수정 해 주세요!
+6. `.releaserc.js`의 `repositoryUrl` 키의 값을 생성한 저장소의 git 주소로 변경 해 주세요.
+7. 이 모든 과정에서 설정이 부족하거나 수정이 필요하다고 생각되시면 자유롭게 수정 해 주세요!
 
 ## 설정하기
 
@@ -40,8 +35,9 @@ pre-commit install
 
 ### 모듈 초기화하기
 
-1. 템플릿 저장소 clone하기. `git clone https://github.com/username/repo`
-2. `go mod init <github.com/username/repo>`로 모듈 생성하기
+```go
+go mod init <github.com/username/repo>
+```
 
 ### Cobra 설치하기
 
@@ -114,7 +110,7 @@ go get -u -v "github.com/user/module"
 | `.releaserc.js`                           | [semantic release](https://semantic-release.gitbook.io/semantic-release/) 모듈의 설정 파일 입니다. [semantic versioning](https://semver.org/)을 기반으로 한 배포를 자동화 할 수 있습니다.                                                                                                                                                                                                                           |
 | `.pre-commit-config.yaml`                 | [pre-commit](https://pre-commit.com/) 설정 파일.  <br>`pre-commit install`로 git hook을 설치 할 수 있고, `pre-commit sample-config`로 이 파일을 생성 할 수 있습니다.                                                                                                                                                                                                                                                                                                    |
 | `.gorelaser.yaml`                         | [GoReleaser](https://goreleaser.com/) 설정 파일. `goreleaser init` 명령어로 생성합니다.  <br>컴파일, 릴리즈 노트 생성, Homebrew Formulae를 생성하고 나의 Homebrew Tap 저장소에 배포하는 작업을 자동화 하는 데 사용됩니다.                                                                                                                                                                                                                                               |
-| `.github/workflows/goreleaser.yaml`.      | Github Action을 이용해 [GoReleaser의 작업을 자동화](https://goreleaser.com/ci/actions/?h=github+ac) 하기 위한 설정 파일.  <br>`Homebrew-tapName`으로 자신의 [brew tap](https://docs.brew.sh/Taps)을 만들어 두었다면, 이 템플릿에서 만든 명령어를 자신의 tap에 자동 배포해주는 Github Action을 위한 설정 파일입니다. |
+| `.github/workflows/release-go.yaml`.      | Github Action을 이용해 [GoReleaser의 작업을 자동화](https://goreleaser.com/ci/actions/?h=github+ac) 하기 위한 설정 파일.  <br>`Homebrew-tapName`으로 자신의 [brew tap](https://docs.brew.sh/Taps)을 만들어 두었다면, 이 템플릿에서 만든 명령어를 자신의 tap에 자동 배포해주는 Github Action을 위한 설정 파일입니다. |
 | `.github/workflows/semanitc-release.yaml` | [유의적 버전](https://semver.org/lang/ko/)에 근거하여 프로그램을 자동 배포하기 위한 깃허브 액션입니다. npm 기반 모듈이므로 CI pipeline에 추가적인 의존성 설치가 필요했습니다.                                                                                                                                                                                                                                                                                                                     |
 | `.github/workflows/golangci-lint.yaml`    | Github Action CI 상에서 lint를 실행하기 위한 Github Action 입니다. 공식 깃허브 저장소의 기본 설정을 그대로 사용하였습니다.                                                                                                                                                                                                                                                                                                                                                                        |
 

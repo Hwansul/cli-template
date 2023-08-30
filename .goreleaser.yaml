@@ -39,7 +39,7 @@ brews:
 
     # Your app's homepage.
     # Default is empty.
-    homepage: "https://github.com/mindulle/cli-template"
+    homepage: "https://github.com/Hwansul/cli-template"
 
     # GitHub/GitLab repository to push the formula to
     tap:
