@@ -76,7 +76,7 @@ cobra-cli init --viper
 
 #### 플래그 추가하기
 
-- [Persistent Flag](https://github.com/spf13/cobra/blob/main/user_guide.md#persistent-flags)와 [Local Flag](https://github.com/spf13/cobra/blob/main/user_guide.md#local-flags)도 추가 할 수 있어요.
+- [Persistent Flag](https://github.com/spf13/cobra/blob/main/site/content/user_guide.md#persistent-flags)와 [Local Flag](https://github.com/spf13/cobra/blob/main/site/content/user_guide.md#local-flags)도 추가 할 수 있어요.
 
 ```go
 // Persistent 플래그는 명령어 자신 뿐만 아니라 하위 명령어에도 적용되는 플래그를 말해요.
