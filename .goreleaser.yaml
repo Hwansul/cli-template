@@ -42,7 +42,7 @@ brews:
     homepage: "https://github.com/Hwansul/cli-template"
 
     # GitHub/GitLab repository to push the formula to
-    tap:
+    repository:
       # Repository owner template. (templateable)
       owner: Hwansul
       # Repository name. (templateable)
