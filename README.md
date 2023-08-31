@@ -7,7 +7,9 @@
    3. 이 과정을 수행하지 않으면 나의 tap 저장소에서 403 에러를 반환했어요. 자세한 이유를 이해한 후에 이 항목을 다시 작성하도록 하겠습니다😊
 2. [pre-commit](#pre-commit)을 초기화 해 주세요. `pre-commit install`. 설치 되어 있지 않다면 [설치](https://pre-commit.com/#installation) 해 주세요. immutable한 revision을 지정하고 싶다면 `pre-commit autoupdate` 명령어를 실행 해 주세요.
 3. [`gitmoji-cli`](https://github.com/carloscuesta/gitmoji-cli#install)의 [`gitmoji --init`](https://github.com/carloscuesta/gitmoji-cli#usage) 명령어를 통해 이모지를 활용한 commit hook을 설정 해 주세요.
-4. go 모듈을 [초기화](#모듈-초기화하기) 해 주세요. `go mod init github.com/username/repo`
+4. go 모듈을 [초기화](#모듈-초기화하기) 해 주세요. 
+   1. 모듈을 brew를 통해서만 배포하고 싶다면 `go mod init projectName` 명령어를 실행 해 주세요.
+   2. 모듈을 깃허브에 배포하고 싶다면 `go mod init github.com/user/repo` 명령어를 실행 해 주세요.
 5. cobra-cli [설치](#cobra-설치하기) 후 root 명령어를 [초기화](#cobra-cli-어플리케이션-초기화하기) 해 주세요.
 6. `.goreleaser.yaml` 파일의 brews 키의 값들을 알맞게 수정 해 주세요.
    1. 여기서 자신의 homebrew tap이 존재하지 않으면 하나 만드실 수 있어요.
