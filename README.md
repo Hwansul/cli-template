@@ -13,7 +13,7 @@
 5. cobra-cli [설치](#cobra-설치하기) 후 root 명령어를 [초기화](#cobra-cli-어플리케이션-초기화하기) 해 주세요.
 6. `.goreleaser.yaml` 파일의 brews 키의 값들을 알맞게 수정 해 주세요.
    1. 여기서 자신의 homebrew tap이 존재하지 않으면 하나 만드실 수 있어요.
-   2. 깃허브 저장소에 `homebrew-username` [형식](https://docs.brew.sh/Taps#repository-naming-conventions-and-assumptions)으로 저장소를 만들고 [예시](https://github.com/Hwansul/homebrew-chakra)처럼 설정 해 주세요.
+   2. 깃허브 저장소에 `homebrew-username` [형식](https://docs.brew.sh/Taps#repository-naming-conventions-and-assumptions)으로 저장소를 만들고 [예시](https://github.com/Hwansul/homebrew-byeoru)처럼 설정 해 주세요.
    3. 해당 예시의 README.md 파일을 제외한 모든 파일은 이 저장소의 goreleaser가 자동으로 생성했어요.
 7. `.releaserc.js`의 `repositoryUrl` 키의 값을 생성한 저장소의 git 주소로 변경 해 주세요.
 8. 이 모든 과정에서 설정이 부족하거나 수정이 필요하다고 생각되시면 자유롭게 수정 해 주세요!
