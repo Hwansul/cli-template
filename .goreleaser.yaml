@@ -39,14 +39,14 @@ brews:
 
     # Your app's homepage.
     # Default is empty.
-    homepage: "https://github.com/jipilmuk/cli-template"
+    homepage: "https://github.com/hoehwa/cli-template"
 
     # GitHub/GitLab repository to push the formula to
     repository:
       # Repository owner template. (templateable)
-      owner: jipilmuk
+      owner: hoehwa
       # Repository name. (templateable)
-      name: homebrew-byeoru
+      name: homebrew-mungu
 
     # Git author used to commit to the repository.
     # Defaults are shown.
